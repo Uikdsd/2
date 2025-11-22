@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Leave System PRO+</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background:#f2f2f7; margin:0; padding:20px; }
+    .container { max-width:900px; margin:auto; background:#fff; padding:24px; border-radius:20px; box-shadow:0 4px 16px rgba(0,0,0,0.1); }
+    button { padding:12px 18px; border:0; background:#007aff; color:white; border-radius:12px; font-size:16px; cursor:pointer; }
+    input, select { padding:10px; font-size:16px; width:100%; margin-bottom:14px; border-radius:10px; border:1px solid #ccc; }
+    .hidden { display:none; }
+    .employee-item { padding:10px; border-bottom:1px solid #eee; display:flex; justify-content:space-between; }
+    .action-btn { background:#ff3b30; padding:6px 10px; border-radius:8px; font-size:14px; }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="container">
+  <h2>เข้าสู่ระบบ</h2>
+  <input id="username" placeholder="ชื่อผู้ใช้" />
+  <input id="password" type="password" placeholder="รหัสผ่าน" />
+  <button onclick="login()">เข้าสู่ระบบ</button>
+  <div id="loginResult" style="margin-top:20px; font-size:18px;"></div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminPage" class="container hidden">
+  <h2>แผงควบคุมผู้จัดการ</h2>
+  <button onclick="showAddEmployee()">➕ เพิ่มบัญชีพนักงาน</button>
+  <button onclick="showEmployeeList()">📋 รายชื่อพนักงาน</button>
+  <button onclick="showLeaveSystem()">📝 ระบบบันทึกเวลาหยุด</button>
+  <button onclick="logout()" style="background:#5856d6">ออกจากระบบ</button>
+</div>
+
+<!-- ADD EMPLOYEE -->
+<div id="addEmployeePage" class="container hidden">
+  <h2>เพิ่มบัญชีพนักงาน</h2>
+  <input id="empName" placeholder="ชื่อจริง" />
+  <input id="empUser" placeholder="Username" />
+  <input id="empPass" placeholder="Password" />
+  <select id="empRole">
+    <option value="employee">Employee</option>
+    <option value="manager">Manager</option>
+  </select>
+  <button onclick="addEmployee()">บันทึก</button>
+  <button onclick="backToAdmin()" style="background:#5856d6">กลับ</button>
+  <div id="addEmpResult" style="margin-top:20px;"></div>
+</div>
+
+<!-- EMPLOYEE LIST -->
+<div id="employeeListPage" class="container hidden">
+  <h2>รายชื่อพนักงาน</h2>
+  <div id="employeeList"></div>
+  <button onclick="backToAdmin()" style="background:#5856d6">กลับ</button>
+</div>
+
+<!-- LEAVE SYSTEM -->
+<div id="leavePage" class="container hidden">
+  <h2>บันทึกเวลาหยุดพนักงาน</h2>
+  <select id="leaveUser"></select>
+  <input id="leaveDate" type="date" />
+  <input id="leaveHours" type="number" placeholder="จำนวนชั่วโมง" />
+  <button onclick="addLeave()">บันทึก</button>
+
+  <h3 style="margin-top:30px">สรุปเวลาหยุด</h3>
+  <button onclick="exportExcel()">⬇️ Export Excel</button>
+  <button onclick="exportPDF()" style="background:#34c759">⬇️ Export PDF</button>
+
+  <div id="leaveSummary" style="margin-top:20px;"></div>
+
+  <button onclick="backToAdmin()" style="background:#5856d6; margin-top:30px;">กลับ</button>
+</div>
+
+<script>
+/* =============================
+   PHASE 2+ MASSIVE UPDATE TODO
+============================= */
+
+// TODO: Integrate Firebase Auth
+// TODO: Integrate Firebase Firestore
+// TODO: Replace LocalStorage with Firestore
+// TODO: Add role permissions for each page
+// TODO: Add employee edit modal
+// TODO: Add reset password
+// TODO: Add CSV export
+// TODO: Add styled PDF export
+// TODO: Add Monthly Summary + Graphs
+// TODO: Add iOS + Material animation
+// TODO: Add Email notification on request
+
+console.log("SYSTEM PLAN READY ✔");
+
+</script>
+
+</body>
+</html>
